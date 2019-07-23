@@ -17,7 +17,7 @@ define(function() {
     function each( obj, iterator ) {
         var i;
 
-        //fix error, add guard here
+        // fix error, add guard here
         if(!obj) {
             return;
         }

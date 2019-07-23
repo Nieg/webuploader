@@ -2263,12 +2263,16 @@
     
                     // 如果 width 的值介于 0 - 1
                     // 说明设置的是百分比。
-                    if ( width <= 1 && width > 0 ) {
+                    if (width instanceof Function){
+                        width=width(file._info);
+                    } else if ( width <= 1 && width > 0 ) {
                         width = file._info.width * width;
                     }
     
                     // 同样的规则应用于 height
-                    if ( height <= 1 && height > 0 ) {
+                    if (height instanceof Function){
+                        height=height(file._info);
+                    } else if ( height <= 1 && height > 0 ) {
                         height = file._info.height * height;
                     }
     
