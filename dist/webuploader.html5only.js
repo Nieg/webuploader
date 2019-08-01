@@ -4865,7 +4865,12 @@
                     arr, i, len, mouseHandler, changeHandler;
     
                 input.attr( 'type', 'file' );
-                input.attr( 'capture', 'camera');
+    
+                // @todo 修复只能通过 摄像头获取图片的问题。
+                if( opts.capture ) {                
+                    input.attr( 'capture', opts.capture );
+                }
+    
                 input.attr( 'name', opts.name );
                 input.addClass('webuploader-element-invisible');
     
